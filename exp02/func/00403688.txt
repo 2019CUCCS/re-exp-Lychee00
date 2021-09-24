@@ -1,0 +1,22 @@
+  00403688: 8B FF              mov         edi,edi
+  0040368A: 55                 push        ebp
+  0040368B: 8B EC              mov         ebp,esp
+  0040368D: 6A 00              push        0
+  0040368F: FF 15 7C 60 40 00  call        dword ptr ds:[0040607Ch]
+  00403695: 85 C0              test        eax,eax
+  00403697: 74 20              je          004036B9
+  00403699: 50                 push        eax
+  0040369A: E8 75 FF FF FF     call        00403614
+  0040369F: 85 C0              test        eax,eax
+  004036A1: 74 16              je          004036B9
+  004036A3: 0F B7 48 5C        movzx       ecx,word ptr [eax+5Ch]
+  004036A7: 6A 02              push        2
+  004036A9: 58                 pop         eax
+  004036AA: 66 3B C8           cmp         cx,ax
+  004036AD: 74 0D              je          004036BC
+  004036AF: 83 F9 03           cmp         ecx,3
+  004036B2: 75 05              jne         004036B9
+  004036B4: 33 C0              xor         eax,eax
+  004036B6: 40                 inc         eax
+  004036B7: 5D                 pop         ebp
+  004036B8: C3                 ret

@@ -1,0 +1,17 @@
+  004037F0: 8B FF              mov         edi,edi
+  004037F2: 55                 push        ebp
+  004037F3: 8B EC              mov         ebp,esp
+  004037F5: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  004037F8: B8 4D 5A 00 00     mov         eax,5A4Dh
+  004037FD: 66 39 01           cmp         word ptr [ecx],ax
+  00403800: 75 1F              jne         00403821
+  00403802: 8B 41 3C           mov         eax,dword ptr [ecx+3Ch]
+  00403805: 03 C1              add         eax,ecx
+  00403807: 81 38 50 45 00 00  cmp         dword ptr [eax],4550h
+  0040380D: 75 12              jne         00403821
+  0040380F: B9 0B 01 00 00     mov         ecx,10Bh
+  00403814: 66 39 48 18        cmp         word ptr [eax+18h],cx
+  00403818: 75 07              jne         00403821
+  0040381A: B8 01 00 00 00     mov         eax,1
+  0040381F: 5D                 pop         ebp
+  00403820: C3                 ret

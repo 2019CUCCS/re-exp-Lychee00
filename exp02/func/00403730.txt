@@ -1,0 +1,50 @@
+  00403730: 8B FF              mov         edi,edi
+  00403732: 55                 push        ebp
+  00403733: 8B EC              mov         ebp,esp
+  00403735: 6A FE              push        0FFFFFFFEh
+  00403737: 68 E0 39 40 00     push        4039E0h
+  0040373C: 68 40 39 40 00     push        403940h
+  00403741: 64 A1 00 00 00 00  mov         eax,dword ptr fs:[00000000h]
+  00403747: 50                 push        eax
+  00403748: 83 EC 08           sub         esp,8
+  0040374B: 53                 push        ebx
+  0040374C: 56                 push        esi
+  0040374D: 57                 push        edi
+  0040374E: A1 04 40 40 00     mov         eax,dword ptr ds:[00404004h]
+  00403753: 31 45 F8           xor         dword ptr [ebp-8],eax
+  00403756: 33 C5              xor         eax,ebp
+  00403758: 50                 push        eax
+  00403759: 8D 45 F0           lea         eax,[ebp-10h]
+  0040375C: 64 A3 00 00 00 00  mov         dword ptr fs:[00000000h],eax
+  00403762: 89 65 E8           mov         dword ptr [ebp-18h],esp
+  00403765: C7 45 FC 00 00 00  mov         dword ptr [ebp-4],0
+            00
+  0040376C: 68 00 00 40 00     push        400000h
+  00403771: E8 7A 00 00 00     call        004037F0
+  00403776: 83 C4 04           add         esp,4
+  00403779: 85 C0              test        eax,eax
+  0040377B: 74 54              je          004037D1
+  0040377D: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00403780: 2D 00 00 40 00     sub         eax,400000h
+  00403785: 50                 push        eax
+  00403786: 68 00 00 40 00     push        400000h
+  0040378B: E8 50 FF FF FF     call        004036E0
+  00403790: 83 C4 08           add         esp,8
+  00403793: 85 C0              test        eax,eax
+  00403795: 74 3A              je          004037D1
+  00403797: 8B 40 24           mov         eax,dword ptr [eax+24h]
+  0040379A: C1 E8 1F           shr         eax,1Fh
+  0040379D: F7 D0              not         eax
+  0040379F: 83 E0 01           and         eax,1
+  004037A2: C7 45 FC FE FF FF  mov         dword ptr [ebp-4],0FFFFFFFEh
+            FF
+  004037A9: 8B 4D F0           mov         ecx,dword ptr [ebp-10h]
+  004037AC: 64 89 0D 00 00 00  mov         dword ptr fs:[00000000h],ecx
+            00
+  004037B3: 59                 pop         ecx
+  004037B4: 5F                 pop         edi
+  004037B5: 5E                 pop         esi
+  004037B6: 5B                 pop         ebx
+  004037B7: 8B E5              mov         esp,ebp
+  004037B9: 5D                 pop         ebp
+  004037BA: C3                 ret

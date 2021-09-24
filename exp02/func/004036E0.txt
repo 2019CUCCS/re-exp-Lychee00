@@ -1,0 +1,34 @@
+  004036E0: 8B FF              mov         edi,edi
+  004036E2: 55                 push        ebp
+  004036E3: 8B EC              mov         ebp,esp
+  004036E5: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  004036E8: 33 D2              xor         edx,edx
+  004036EA: 53                 push        ebx
+  004036EB: 56                 push        esi
+  004036EC: 57                 push        edi
+  004036ED: 8B 48 3C           mov         ecx,dword ptr [eax+3Ch]
+  004036F0: 03 C8              add         ecx,eax
+  004036F2: 0F B7 41 14        movzx       eax,word ptr [ecx+14h]
+  004036F6: 0F B7 59 06        movzx       ebx,word ptr [ecx+6]
+  004036FA: 83 C0 18           add         eax,18h
+  004036FD: 03 C1              add         eax,ecx
+  004036FF: 85 DB              test        ebx,ebx
+  00403701: 74 1B              je          0040371E
+  00403703: 8B 7D 0C           mov         edi,dword ptr [ebp+0Ch]
+  00403706: 8B 70 0C           mov         esi,dword ptr [eax+0Ch]
+  00403709: 3B FE              cmp         edi,esi
+  0040370B: 72 09              jb          00403716
+  0040370D: 8B 48 08           mov         ecx,dword ptr [eax+8]
+  00403710: 03 CE              add         ecx,esi
+  00403712: 3B F9              cmp         edi,ecx
+  00403714: 72 0A              jb          00403720
+  00403716: 42                 inc         edx
+  00403717: 83 C0 28           add         eax,28h
+  0040371A: 3B D3              cmp         edx,ebx
+  0040371C: 72 E8              jb          00403706
+  0040371E: 33 C0              xor         eax,eax
+  00403720: 5F                 pop         edi
+  00403721: 5E                 pop         esi
+  00403722: 5B                 pop         ebx
+  00403723: 5D                 pop         ebp
+  00403724: C3                 ret

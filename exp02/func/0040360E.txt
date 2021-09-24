@@ -1,0 +1,31 @@
+  0040360E: FF 25 30 61 40 00  jmp         dword ptr ds:[00406130h]
+  00403614: 6A 0C              push        0Ch
+  00403616: 68 C0 39 40 00     push        4039C0h
+  0040361B: E8 B8 02 00 00     call        004038D8
+  00403620: 33 C9              xor         ecx,ecx
+  00403622: 8B 45 08           mov         eax,dword ptr [ebp+8]
+  00403625: 85 C0              test        eax,eax
+  00403627: 74 4B              je          00403674
+  00403629: 83 F8 FF           cmp         eax,0FFFFFFFFh
+  0040362C: 74 46              je          00403674
+  0040362E: 89 4D FC           mov         dword ptr [ebp-4],ecx
+  00403631: BA 4D 5A 00 00     mov         edx,5A4Dh
+  00403636: 66 39 10           cmp         word ptr [eax],dx
+  00403639: 75 32              jne         0040366D
+  0040363B: 8B 50 3C           mov         edx,dword ptr [eax+3Ch]
+  0040363E: 85 D2              test        edx,edx
+  00403640: 78 2B              js          0040366D
+  00403642: 81 FA 00 00 00 10  cmp         edx,10000000h
+  00403648: 73 23              jae         0040366D
+  0040364A: 03 C2              add         eax,edx
+  0040364C: 89 45 E4           mov         dword ptr [ebp-1Ch],eax
+  0040364F: 8B 08              mov         ecx,dword ptr [eax]
+  00403651: 81 E9 50 45 00 00  sub         ecx,4550h
+  00403657: F7 D9              neg         ecx
+  00403659: 1B C9              sbb         ecx,ecx
+  0040365B: F7 D1              not         ecx
+  0040365D: 23 C8              and         ecx,eax
+  0040365F: EB 09              jmp         0040366A
+  00403661: 33 C0              xor         eax,eax
+  00403663: 40                 inc         eax
+  00403664: C3                 ret

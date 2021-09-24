@@ -1,0 +1,23 @@
+  004038D8: 68 40 39 40 00     push        403940h
+  004038DD: 64 FF 35 00 00 00  push        dword ptr fs:[00000000h]
+            00
+  004038E4: 8B 44 24 10        mov         eax,dword ptr [esp+10h]
+  004038E8: 89 6C 24 10        mov         dword ptr [esp+10h],ebp
+  004038EC: 8D 6C 24 10        lea         ebp,[esp+10h]
+  004038F0: 2B E0              sub         esp,eax
+  004038F2: 53                 push        ebx
+  004038F3: 56                 push        esi
+  004038F4: 57                 push        edi
+  004038F5: A1 04 40 40 00     mov         eax,dword ptr ds:[00404004h]
+  004038FA: 31 45 FC           xor         dword ptr [ebp-4],eax
+  004038FD: 33 C5              xor         eax,ebp
+  004038FF: 50                 push        eax
+  00403900: 89 65 E8           mov         dword ptr [ebp-18h],esp
+  00403903: FF 75 F8           push        dword ptr [ebp-8]
+  00403906: 8B 45 FC           mov         eax,dword ptr [ebp-4]
+  00403909: C7 45 FC FE FF FF  mov         dword ptr [ebp-4],0FFFFFFFEh
+            FF
+  00403910: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00403913: 8D 45 F0           lea         eax,[ebp-10h]
+  00403916: 64 A3 00 00 00 00  mov         dword ptr fs:[00000000h],eax
+  0040391C: C3                 ret

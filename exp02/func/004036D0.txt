@@ -1,0 +1,2 @@
+  004036D0: 33 C0              xor         eax,eax
+  004036D2: C3                 ret

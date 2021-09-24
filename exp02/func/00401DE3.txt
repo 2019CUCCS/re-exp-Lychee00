@@ -1,0 +1,26 @@
+  00401DE3: 8B FF              mov         edi,edi
+  00401DE5: 55                 push        ebp
+  00401DE6: 8B EC              mov         ebp,esp
+  00401DE8: 83 39 00           cmp         dword ptr [ecx],0
+  00401DEB: 74 31              je          00401E1E
+  00401DED: 39 11              cmp         dword ptr [ecx],edx
+  00401DEF: 74 2D              je          00401E1E
+  00401DF1: B8 88 11 40 00     mov         eax,401188h
+  00401DF6: 83 FA 02           cmp         edx,2
+  00401DF9: 74 05              je          00401E00
+  00401DFB: B8 94 11 40 00     mov         eax,401194h
+  00401E00: 50                 push        eax
+  00401E01: FF 75 08           push        dword ptr [ebp+8]
+  00401E04: 68 55 27 00 00     push        2755h
+  00401E09: 6A 01              push        1
+  00401E0B: E8 69 1B 00 00     call        00403979
+  00401E10: 59                 pop         ecx
+  00401E11: 50                 push        eax
+  00401E12: E8 25 13 00 00     call        0040313C
+  00401E17: 83 C4 10           add         esp,10h
+  00401E1A: 32 C0              xor         al,al
+  00401E1C: EB 04              jmp         00401E22
+  00401E1E: 89 11              mov         dword ptr [ecx],edx
+  00401E20: B0 01              mov         al,1
+  00401E22: 5D                 pop         ebp
+  00401E23: C2 04 00           ret         4

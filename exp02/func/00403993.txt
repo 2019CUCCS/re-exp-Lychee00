@@ -1,0 +1,59 @@
+  00403993: FF 25 34 61 40 00  jmp         dword ptr ds:[00406134h]
+  00403999: FF 25 4C 61 40 00  jmp         dword ptr ds:[0040614Ch]
+  0040399F: CC                 int         3
+  004039A0: FE
+  004039A1: FF
+  004039A2: FF
+  004039A3: FF 00              inc         dword ptr [eax]
+  004039A5: 00 00              add         byte ptr [eax],al
+  004039A7: 00 D4              add         ah,dl
+  004039A9: FF
+  004039AA: FF
+  004039AB: FF 00              inc         dword ptr [eax]
+  004039AD: 00 00              add         byte ptr [eax],al
+  004039AF: 00 FE              add         dh,bh
+  004039B1: FF
+  004039B2: FF
+  004039B3: FF 52 33           call        dword ptr [edx+33h]
+  004039B6: 40                 inc         eax
+  004039B7: 00 66 33           add         byte ptr [esi+33h],ah
+  004039BA: 40                 inc         eax
+  004039BB: 00 00              add         byte ptr [eax],al
+  004039BD: 00 00              add         byte ptr [eax],al
+  004039BF: 00 FE              add         dh,bh
+  004039C1: FF
+  004039C2: FF
+  004039C3: FF 00              inc         dword ptr [eax]
+  004039C5: 00 00              add         byte ptr [eax],al
+  004039C7: 00 D4              add         ah,dl
+  004039C9: FF
+  004039CA: FF
+  004039CB: FF 00              inc         dword ptr [eax]
+  004039CD: 00 00              add         byte ptr [eax],al
+  004039CF: 00 FE              add         dh,bh
+  004039D1: FF
+  004039D2: FF
+  004039D3: FF 61 36           jmp         dword ptr [ecx+36h]
+  004039D6: 40                 inc         eax
+  004039D7: 00 65 36           add         byte ptr [ebp+36h],ah
+  004039DA: 40                 inc         eax
+  004039DB: 00 00              add         byte ptr [eax],al
+  004039DD: 00 00              add         byte ptr [eax],al
+  004039DF: 00 FE              add         dh,bh
+  004039E1: FF
+  004039E2: FF
+  004039E3: FF 00              inc         dword ptr [eax]
+  004039E5: 00 00              add         byte ptr [eax],al
+  004039E7: 00 D8              add         al,bl
+  004039E9: FF
+  004039EA: FF
+  004039EB: FF 00              inc         dword ptr [eax]
+  004039ED: 00 00              add         byte ptr [eax],al
+  004039EF: 00 FE              add         dh,bh
+  004039F1: FF
+  004039F2: FF
+  004039F3: FF
+  004039F4: BB 37 40 00 CE     mov         ebx,0CE004037h
+  004039F9: 37                 aaa
+  004039FA: 40                 inc         eax
+  004039FB: 00

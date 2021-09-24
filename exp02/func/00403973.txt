@@ -1,0 +1,10 @@
+  00403973: FF 25 F4 60 40 00  jmp         dword ptr ds:[004060F4h]
+  00403979: 8B FF              mov         edi,edi
+  0040397B: 55                 push        ebp
+  0040397C: 8B EC              mov         ebp,esp
+  0040397E: E8 0A 00 00 00     call        0040398D
+  00403983: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00403986: C1 E1 05           shl         ecx,5
+  00403989: 03 C1              add         eax,ecx
+  0040398B: 5D                 pop         ebp
+  0040398C: C3                 ret

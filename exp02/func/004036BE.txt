@@ -1,0 +1,15 @@
+  004036BE: FF 25 24 61 40 00  jmp         dword ptr ds:[00406124h]
+  004036C4: CC                 int         3
+  004036C5: CC                 int         3
+  004036C6: CC                 int         3
+  004036C7: CC                 int         3
+  004036C8: CC                 int         3
+  004036C9: CC                 int         3
+  004036CA: CC                 int         3
+  004036CB: CC                 int         3
+  004036CC: CC                 int         3
+  004036CD: CC                 int         3
+  004036CE: CC                 int         3
+  004036CF: CC                 int         3
+  004036D0: 33 C0              xor         eax,eax
+  004036D2: C3                 ret

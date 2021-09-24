@@ -1,0 +1,125 @@
+  00403002: 8B FF              mov         edi,edi
+  00403004: 55                 push        ebp
+  00403005: 8B EC              mov         ebp,esp
+  00403007: 83 EC 10           sub         esp,10h
+  0040300A: 53                 push        ebx
+  0040300B: 56                 push        esi
+  0040300C: 57                 push        edi
+  0040300D: 8B F1              mov         esi,ecx
+  0040300F: 89 55 FC           mov         dword ptr [ebp-4],edx
+  00403012: 56                 push        esi
+  00403013: 33 DB              xor         ebx,ebx
+  00403015: C7 45 F8 01 00 00  mov         dword ptr [ebp-8],1
+            00
+  0040301C: 33 FF              xor         edi,edi
+  0040301E: FF 15 08 61 40 00  call        dword ptr ds:[00406108h]
+  00403024: 59                 pop         ecx
+  00403025: 8D 55 F8           lea         edx,[ebp-8]
+  00403028: 8B CE              mov         ecx,esi
+  0040302A: E8 DF FD FF FF     call        00402E0E
+  0040302F: 85 C0              test        eax,eax
+  00403031: 75 05              jne         00403038
+  00403033: 39 5D F8           cmp         dword ptr [ebp-8],ebx
+  00403036: 74 18              je          00403050
+  00403038: 68 00 00 02 00     push        20000h
+  0040303D: 56                 push        esi
+  0040303E: FF 15 14 61 40 00  call        dword ptr ds:[00406114h]
+  00403044: 59                 pop         ecx
+  00403045: 50                 push        eax
+  00403046: FF 15 0C 61 40 00  call        dword ptr ds:[0040610Ch]
+  0040304C: 59                 pop         ecx
+  0040304D: 59                 pop         ecx
+  0040304E: 8B D8              mov         ebx,eax
+  00403050: 8D 4D F0           lea         ecx,[ebp-10h]
+  00403053: E8 31 FE FF FF     call        00402E89
+  00403058: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  0040305B: 39 7D F8           cmp         dword ptr [ebp-8],edi
+  0040305E: 0F 85 9C 00 00 00  jne         00403100
+  00403064: 6A 0D              push        0Dh
+  00403066: FF 75 FC           push        dword ptr [ebp-4]
+  00403069: FF 15 18 61 40 00  call        dword ptr ds:[00406118h]
+  0040306F: 59                 pop         ecx
+  00403070: 59                 pop         ecx
+  00403071: 85 C0              test        eax,eax
+  00403073: 74 07              je          0040307C
+  00403075: 68 00 80 00 00     push        8000h
+  0040307A: EB 12              jmp         0040308E
+  0040307C: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  0040307F: F7 D8              neg         eax
+  00403081: 1B C0              sbb         eax,eax
+  00403083: 25 00 C0 01 00     and         eax,1C000h
+  00403088: 05 00 40 00 00     add         eax,4000h
+  0040308D: 50                 push        eax
+  0040308E: 56                 push        esi
+  0040308F: FF 15 14 61 40 00  call        dword ptr ds:[00406114h]
+  00403095: 59                 pop         ecx
+  00403096: 50                 push        eax
+  00403097: FF 15 0C 61 40 00  call        dword ptr ds:[0040610Ch]
+  0040309D: 8B D8              mov         ebx,eax
+  0040309F: 59                 pop         ecx
+  004030A0: 59                 pop         ecx
+  004030A1: 39 7D F4           cmp         dword ptr [ebp-0Ch],edi
+  004030A4: 75 5A              jne         00403100
+  004030A6: 33 C0              xor         eax,eax
+  004030A8: 50                 push        eax
+  004030A9: 50                 push        eax
+  004030AA: 50                 push        eax
+  004030AB: 50                 push        eax
+  004030AC: 6A FF              push        0FFFFFFFFh
+  004030AE: FF 75 FC           push        dword ptr [ebp-4]
+  004030B1: 50                 push        eax
+  004030B2: FF 75 F0           push        dword ptr [ebp-10h]
+  004030B5: FF 15 C4 60 40 00  call        dword ptr ds:[004060C4h]
+  004030BB: 89 45 F4           mov         dword ptr [ebp-0Ch],eax
+  004030BE: 85 C0              test        eax,eax
+  004030C0: 74 50              je          00403112
+  004030C2: 50                 push        eax
+  004030C3: 6A 40              push        40h
+  004030C5: FF 15 74 60 40 00  call        dword ptr ds:[00406074h]
+  004030CB: 8B F8              mov         edi,eax
+  004030CD: 85 FF              test        edi,edi
+  004030CF: 74 41              je          00403112
+  004030D1: 6A 00              push        0
+  004030D3: 6A 00              push        0
+  004030D5: FF 75 F4           push        dword ptr [ebp-0Ch]
+  004030D8: 57                 push        edi
+  004030D9: 6A FF              push        0FFFFFFFFh
+  004030DB: FF 75 FC           push        dword ptr [ebp-4]
+  004030DE: 6A 00              push        0
+  004030E0: FF 75 F0           push        dword ptr [ebp-10h]
+  004030E3: FF 15 C4 60 40 00  call        dword ptr ds:[004060C4h]
+  004030E9: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  004030EC: 48                 dec         eax
+  004030ED: 50                 push        eax
+  004030EE: 57                 push        edi
+  004030EF: 56                 push        esi
+  004030F0: FF 15 14 61 40 00  call        dword ptr ds:[00406114h]
+  004030F6: 59                 pop         ecx
+  004030F7: 50                 push        eax
+  004030F8: FF 15 10 61 40 00  call        dword ptr ds:[00406110h]
+  004030FE: EB 0F              jmp         0040310F
+  00403100: FF 75 FC           push        dword ptr [ebp-4]
+  00403103: 68 FC 11 40 00     push        4011FCh
+  00403108: 56                 push        esi
+  00403109: FF 15 20 61 40 00  call        dword ptr ds:[00406120h]
+  0040310F: 83 C4 0C           add         esp,0Ch
+  00403112: 56                 push        esi
+  00403113: FF 15 08 61 40 00  call        dword ptr ds:[00406108h]
+  00403119: 59                 pop         ecx
+  0040311A: 53                 push        ebx
+  0040311B: 56                 push        esi
+  0040311C: FF 15 14 61 40 00  call        dword ptr ds:[00406114h]
+  00403122: 59                 pop         ecx
+  00403123: 50                 push        eax
+  00403124: FF 15 0C 61 40 00  call        dword ptr ds:[0040610Ch]
+  0040312A: 59                 pop         ecx
+  0040312B: 59                 pop         ecx
+  0040312C: 85 FF              test        edi,edi
+  0040312E: 74 07              je          00403137
+  00403130: 57                 push        edi
+  00403131: FF 15 70 60 40 00  call        dword ptr ds:[00406070h]
+  00403137: 5F                 pop         edi
+  00403138: 5E                 pop         esi
+  00403139: 5B                 pop         ebx
+  0040313A: C9                 leave
+  0040313B: C3                 ret

@@ -1,0 +1,26 @@
+  0040313C: 8B FF              mov         edi,edi
+  0040313E: 55                 push        ebp
+  0040313F: 8B EC              mov         ebp,esp
+  00403141: 51                 push        ecx
+  00403142: 51                 push        ecx
+  00403143: 8D 45 10           lea         eax,[ebp+10h]
+  00403146: 89 45 F8           mov         dword ptr [ebp-8],eax
+  00403149: 8D 45 F8           lea         eax,[ebp-8]
+  0040314C: 50                 push        eax
+  0040314D: 6A 00              push        0
+  0040314F: 8D 45 FC           lea         eax,[ebp-4]
+  00403152: 50                 push        eax
+  00403153: 6A 00              push        0
+  00403155: FF 75 0C           push        dword ptr [ebp+0Ch]
+  00403158: FF 35 20 44 40 00  push        dword ptr ds:[00404420h]
+  0040315E: 68 00 09 00 00     push        900h
+  00403163: FF 15 88 60 40 00  call        dword ptr ds:[00406088h]
+  00403169: 85 C0              test        eax,eax
+  0040316B: 74 14              je          00403181
+  0040316D: 8B 55 FC           mov         edx,dword ptr [ebp-4]
+  00403170: 8B 4D 08           mov         ecx,dword ptr [ebp+8]
+  00403173: E8 8A FE FF FF     call        00403002
+  00403178: FF 75 FC           push        dword ptr [ebp-4]
+  0040317B: FF 15 70 60 40 00  call        dword ptr ds:[00406070h]
+  00403181: C9                 leave
+  00403182: C3                 ret

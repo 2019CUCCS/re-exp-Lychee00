@@ -1,0 +1,23 @@
+  004033DD: B8 4D 5A 00 00     mov         eax,5A4Dh
+  004033E2: 66 39 05 00 00 40  cmp         word ptr ds:[00400000h],ax
+            00
+  004033E9: 75 55              jne         00403440
+  004033EB: 8B 0D 3C 00 40 00  mov         ecx,dword ptr ds:[0040003Ch]
+  004033F1: 81 B9 00 00 40 00  cmp         dword ptr [ecx+00400000h],4550h
+            50 45 00 00
+  004033FB: 75 43              jne         00403440
+  004033FD: 0F B7 81 18 00 40  movzx       eax,word ptr [ecx+00400018h]
+            00
+  00403404: BA 0B 01 00 00     mov         edx,10Bh
+  00403409: 66 3B C2           cmp         ax,dx
+  0040340C: 74 1F              je          0040342D
+  0040340E: BA 0B 02 00 00     mov         edx,20Bh
+  00403413: 66 3B C2           cmp         ax,dx
+  00403416: 75 28              jne         00403440
+  00403418: 83 B9 84 00 40 00  cmp         dword ptr [ecx+00400084h],0Eh
+            0E
+  0040341F: 76 1F              jbe         00403440
+  00403421: 33 C0              xor         eax,eax
+  00403423: 39 81 F8 00 40 00  cmp         dword ptr [ecx+004000F8h],eax
+  00403429: 0F 95 C0           setne       al
+  0040342C: C3                 ret

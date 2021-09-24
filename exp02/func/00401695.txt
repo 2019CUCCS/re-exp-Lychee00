@@ -1,0 +1,35 @@
+  00401695: 8B FF              mov         edi,edi
+  00401697: 55                 push        ebp
+  00401698: 8B EC              mov         ebp,esp
+  0040169A: 51                 push        ecx
+  0040169B: 56                 push        esi
+  0040169C: 8B 75 08           mov         esi,dword ptr [ebp+8]
+  0040169F: 8D 42 FF           lea         eax,[edx-1]
+  004016A2: 57                 push        edi
+  004016A3: 8B F9              mov         edi,ecx
+  004016A5: 3B F0              cmp         esi,eax
+  004016A7: 75 21              jne         004016CA
+  004016A9: FF 34 B7           push        dword ptr [edi+esi*4]
+  004016AC: 68 11 27 00 00     push        2711h
+  004016B1: 6A 01              push        1
+  004016B3: E8 C1 22 00 00     call        00403979
+  004016B8: 59                 pop         ecx
+  004016B9: 50                 push        eax
+  004016BA: E8 7D 1A 00 00     call        0040313C
+  004016BF: 83 C4 0C           add         esp,0Ch
+  004016C2: 6A 01              push        1
+  004016C4: FF 15 2C 61 40 00  call        dword ptr ds:[0040612Ch]
+  004016CA: 6A 00              push        0
+  004016CC: 8D 45 FC           lea         eax,[ebp-4]
+  004016CF: 50                 push        eax
+  004016D0: FF 74 B7 04        push        dword ptr [edi+esi*4+4]
+  004016D4: FF 15 38 61 40 00  call        dword ptr ds:[00406138h]
+  004016DA: 83 C4 0C           add         esp,0Ch
+  004016DD: 3B 45 0C           cmp         eax,dword ptr [ebp+0Ch]
+  004016E0: 72 0B              jb          004016ED
+  004016E2: 3B 45 10           cmp         eax,dword ptr [ebp+10h]
+  004016E5: 77 06              ja          004016ED
+  004016E7: 5F                 pop         edi
+  004016E8: 5E                 pop         esi
+  004016E9: C9                 leave
+  004016EA: C2 0C 00           ret         0Ch

@@ -1,0 +1,71 @@
+  00402F40: 8B FF              mov         edi,edi
+  00402F42: 55                 push        ebp
+  00402F43: 8B EC              mov         ebp,esp
+  00402F45: 83 EC 0C           sub         esp,0Ch
+  00402F48: 8D 55 FC           lea         edx,[ebp-4]
+  00402F4B: 56                 push        esi
+  00402F4C: 8B F1              mov         esi,ecx
+  00402F4E: E8 BB FE FF FF     call        00402E0E
+  00402F53: 85 C0              test        eax,eax
+  00402F55: 0F 85 A4 00 00 00  jne         00402FFF
+  00402F5B: 39 45 FC           cmp         dword ptr [ebp-4],eax
+  00402F5E: 0F 85 9B 00 00 00  jne         00402FFF
+  00402F64: 8D 4D FC           lea         ecx,[ebp-4]
+  00402F67: E8 1D FF FF FF     call        00402E89
+  00402F6C: 85 C0              test        eax,eax
+  00402F6E: 74 3E              je          00402FAE
+  00402F70: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00402F73: 50                 push        eax
+  00402F74: 56                 push        esi
+  00402F75: FF 15 1C 61 40 00  call        dword ptr ds:[0040611Ch]
+  00402F7B: 59                 pop         ecx
+  00402F7C: 59                 pop         ecx
+  00402F7D: 85 C0              test        eax,eax
+  00402F7F: 75 7E              jne         00402FFF
+  00402F81: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00402F84: 0B 45 F8           or          eax,dword ptr [ebp-8]
+  00402F87: 75 76              jne         00402FFF
+  00402F89: 68 00 00 02 00     push        20000h
+  00402F8E: 56                 push        esi
+  00402F8F: FF 15 14 61 40 00  call        dword ptr ds:[00406114h]
+  00402F95: 59                 pop         ecx
+  00402F96: 50                 push        eax
+  00402F97: FF 15 0C 61 40 00  call        dword ptr ds:[0040610Ch]
+  00402F9D: 68 F4 11 40 00     push        4011F4h
+  00402FA2: 56                 push        esi
+  00402FA3: FF 15 20 61 40 00  call        dword ptr ds:[00406120h]
+  00402FA9: 83 C4 10           add         esp,10h
+  00402FAC: EB 51              jmp         00402FFF
+  00402FAE: 81 7D FC E9 FD 00  cmp         dword ptr [ebp-4],0FDE9h
+            00
+  00402FB5: 75 48              jne         00402FFF
+  00402FB7: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00402FBA: 50                 push        eax
+  00402FBB: 56                 push        esi
+  00402FBC: FF 15 1C 61 40 00  call        dword ptr ds:[0040611Ch]
+  00402FC2: 59                 pop         ecx
+  00402FC3: 59                 pop         ecx
+  00402FC4: 85 C0              test        eax,eax
+  00402FC6: 75 37              jne         00402FFF
+  00402FC8: 8B 45 F4           mov         eax,dword ptr [ebp-0Ch]
+  00402FCB: 0B 45 F8           or          eax,dword ptr [ebp-8]
+  00402FCE: 75 2F              jne         00402FFF
+  00402FD0: 68 00 80 00 00     push        8000h
+  00402FD5: 56                 push        esi
+  00402FD6: FF 15 14 61 40 00  call        dword ptr ds:[00406114h]
+  00402FDC: 59                 pop         ecx
+  00402FDD: 50                 push        eax
+  00402FDE: FF 15 0C 61 40 00  call        dword ptr ds:[0040610Ch]
+  00402FE4: 59                 pop         ecx
+  00402FE5: 59                 pop         ecx
+  00402FE6: 6A 03              push        3
+  00402FE8: 68 F8 11 40 00     push        4011F8h
+  00402FED: 56                 push        esi
+  00402FEE: FF 15 14 61 40 00  call        dword ptr ds:[00406114h]
+  00402FF4: 59                 pop         ecx
+  00402FF5: 50                 push        eax
+  00402FF6: FF 15 10 61 40 00  call        dword ptr ds:[00406110h]
+  00402FFC: 83 C4 0C           add         esp,0Ch
+  00402FFF: 5E                 pop         esi
+  00403000: C9                 leave
+  00403001: C3                 ret

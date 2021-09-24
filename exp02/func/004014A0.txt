@@ -1,0 +1,30 @@
+  004014A0: 8B FF              mov         edi,edi
+  004014A2: 55                 push        ebp
+  004014A3: 8B EC              mov         ebp,esp
+  004014A5: 51                 push        ecx
+  004014A6: 56                 push        esi
+  004014A7: 8B 75 0C           mov         esi,dword ptr [ebp+0Ch]
+  004014AA: BA 01 04 00 00     mov         edx,401h
+  004014AF: 2B F1              sub         esi,ecx
+  004014B1: 8D 82 FD FB FF 7F  lea         eax,[edx+7FFFFBFDh]
+  004014B7: 85 C0              test        eax,eax
+  004014B9: 74 14              je          004014CF
+  004014BB: 0F B7 04 0E        movzx       eax,word ptr [esi+ecx]
+  004014BF: 66 85 C0           test        ax,ax
+  004014C2: 74 0B              je          004014CF
+  004014C4: 66 89 01           mov         word ptr [ecx],ax
+  004014C7: 83 C1 02           add         ecx,2
+  004014CA: 83 EA 01           sub         edx,1
+  004014CD: 75 E2              jne         004014B1
+  004014CF: 5E                 pop         esi
+  004014D0: 85 D2              test        edx,edx
+  004014D2: 75 03              jne         004014D7
+  004014D4: 83 E9 02           sub         ecx,2
+  004014D7: F7 DA              neg         edx
+  004014D9: 1B D2              sbb         edx,edx
+  004014DB: 81 E2 86 FF F8 7F  and         edx,7FF8FF86h
+  004014E1: 33 C0              xor         eax,eax
+  004014E3: 66 89 01           mov         word ptr [ecx],ax
+  004014E6: 8D 82 7A 00 07 80  lea         eax,[edx+8007007Ah]
+  004014EC: C9                 leave
+  004014ED: C2 0C 00           ret         0Ch

@@ -1,0 +1,20 @@
+  004014F0: 8B FF              mov         edi,edi
+  004014F2: 55                 push        ebp
+  004014F3: 8B EC              mov         ebp,esp
+  004014F5: 51                 push        ecx
+  004014F6: 56                 push        esi
+  004014F7: 8D 45 FC           lea         eax,[ebp-4]
+  004014FA: C7 45 FC FF 07 00  mov         dword ptr [ebp-4],7FFh
+            00
+  00401501: 50                 push        eax
+  00401502: BE 28 44 40 00     mov         esi,404428h
+  00401507: 56                 push        esi
+  00401508: 51                 push        ecx
+  00401509: FF 15 10 60 40 00  call        dword ptr ds:[00406010h]
+  0040150F: 85 C0              test        eax,eax
+  00401511: 8B C6              mov         eax,esi
+  00401513: 74 05              je          0040151A
+  00401515: B8 00 11 40 00     mov         eax,401100h
+  0040151A: 5E                 pop         esi
+  0040151B: C9                 leave
+  0040151C: C3                 ret

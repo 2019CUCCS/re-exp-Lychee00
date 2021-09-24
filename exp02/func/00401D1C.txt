@@ -1,0 +1,43 @@
+  00401D1C: 8B FF              mov         edi,edi
+  00401D1E: 55                 push        ebp
+  00401D1F: 8B EC              mov         ebp,esp
+  00401D21: 83 EC 10           sub         esp,10h
+  00401D24: 53                 push        ebx
+  00401D25: 56                 push        esi
+  00401D26: 8D 45 FC           lea         eax,[ebp-4]
+  00401D29: C7 45 F4 04 00 00  mov         dword ptr [ebp-0Ch],4
+            00
+  00401D30: 50                 push        eax
+  00401D31: 6A 01              push        1
+  00401D33: 33 F6              xor         esi,esi
+  00401D35: 56                 push        esi
+  00401D36: 68 08 11 40 00     push        401108h
+  00401D3B: 68 02 00 00 80     push        80000002h
+  00401D40: 89 75 FC           mov         dword ptr [ebp-4],esi
+  00401D43: 89 75 F8           mov         dword ptr [ebp-8],esi
+  00401D46: FF 15 BC 60 40 00  call        dword ptr ds:[004060BCh]
+  00401D4C: 85 C0              test        eax,eax
+  00401D4E: 75 1B              jne         00401D6B
+  00401D50: 8D 45 F4           lea         eax,[ebp-0Ch]
+  00401D53: 50                 push        eax
+  00401D54: 8D 45 F8           lea         eax,[ebp-8]
+  00401D57: 50                 push        eax
+  00401D58: 8D 45 F0           lea         eax,[ebp-10h]
+  00401D5B: 50                 push        eax
+  00401D5C: 56                 push        esi
+  00401D5D: 68 70 11 40 00     push        401170h
+  00401D62: FF 75 FC           push        dword ptr [ebp-4]
+  00401D65: FF 15 B8 60 40 00  call        dword ptr ds:[004060B8h]
+  00401D6B: 8B 5D F8           mov         ebx,dword ptr [ebp-8]
+  00401D6E: 85 DB              test        ebx,ebx
+  00401D70: 75 02              jne         00401D74
+  00401D72: B3 80              mov         bl,80h
+  00401D74: 39 75 FC           cmp         dword ptr [ebp-4],esi
+  00401D77: 74 09              je          00401D82
+  00401D79: FF 75 FC           push        dword ptr [ebp-4]
+  00401D7C: FF 15 B4 60 40 00  call        dword ptr ds:[004060B4h]
+  00401D82: 5E                 pop         esi
+  00401D83: 8A C3              mov         al,bl
+  00401D85: 5B                 pop         ebx
+  00401D86: C9                 leave
+  00401D87: C3                 ret

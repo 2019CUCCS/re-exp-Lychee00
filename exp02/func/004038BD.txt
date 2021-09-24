@@ -1,0 +1,6 @@
+  004038BD: 68 00 00 03 00     push        30000h
+  004038C2: 68 00 00 01 00     push        10000h
+  004038C7: FF 15 04 61 40 00  call        dword ptr ds:[00406104h]
+  004038CD: 59                 pop         ecx
+  004038CE: 59                 pop         ecx
+  004038CF: C3                 ret

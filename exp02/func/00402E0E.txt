@@ -1,0 +1,53 @@
+  00402E0E: 8B FF              mov         edi,edi
+  00402E10: 55                 push        ebp
+  00402E11: 8B EC              mov         ebp,esp
+  00402E13: 51                 push        ecx
+  00402E14: 53                 push        ebx
+  00402E15: 57                 push        edi
+  00402E16: 51                 push        ecx
+  00402E17: 8B DA              mov         ebx,edx
+  00402E19: FF 15 14 61 40 00  call        dword ptr ds:[00406114h]
+  00402E1F: 50                 push        eax
+  00402E20: FF 15 00 61 40 00  call        dword ptr ds:[00406100h]
+  00402E26: 8B F8              mov         edi,eax
+  00402E28: 59                 pop         ecx
+  00402E29: 59                 pop         ecx
+  00402E2A: 83 FF FF           cmp         edi,0FFFFFFFFh
+  00402E2D: 75 05              jne         00402E34
+  00402E2F: 6A 06              push        6
+  00402E31: 58                 pop         eax
+  00402E32: EB 51              jmp         00402E85
+  00402E34: 56                 push        esi
+  00402E35: 57                 push        edi
+  00402E36: FF 15 60 60 40 00  call        dword ptr ds:[00406060h]
+  00402E3C: 8B F0              mov         esi,eax
+  00402E3E: 85 F6              test        esi,esi
+  00402E40: 75 12              jne         00402E54
+  00402E42: FF 15 58 60 40 00  call        dword ptr ds:[00406058h]
+  00402E48: 85 C0              test        eax,eax
+  00402E4A: 74 08              je          00402E54
+  00402E4C: FF 15 58 60 40 00  call        dword ptr ds:[00406058h]
+  00402E52: EB 30              jmp         00402E84
+  00402E54: 81 E6 FF 7F FF FF  and         esi,0FFFF7FFFh
+  00402E5A: 83 FE 02           cmp         esi,2
+  00402E5D: 75 1F              jne         00402E7E
+  00402E5F: 8D 45 FC           lea         eax,[ebp-4]
+  00402E62: 50                 push        eax
+  00402E63: 57                 push        edi
+  00402E64: FF 15 48 60 40 00  call        dword ptr ds:[00406048h]
+  00402E6A: 85 C0              test        eax,eax
+  00402E6C: 75 0B              jne         00402E79
+  00402E6E: FF 15 58 60 40 00  call        dword ptr ds:[00406058h]
+  00402E74: 83 F8 06           cmp         eax,6
+  00402E77: 74 05              je          00402E7E
+  00402E79: 33 C0              xor         eax,eax
+  00402E7B: 40                 inc         eax
+  00402E7C: EB 02              jmp         00402E80
+  00402E7E: 33 C0              xor         eax,eax
+  00402E80: 89 03              mov         dword ptr [ebx],eax
+  00402E82: 33 C0              xor         eax,eax
+  00402E84: 5E                 pop         esi
+  00402E85: 5F                 pop         edi
+  00402E86: 5B                 pop         ebx
+  00402E87: C9                 leave
+  00402E88: C3                 ret

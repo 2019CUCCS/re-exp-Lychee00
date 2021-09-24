@@ -1,0 +1,89 @@
+  004015B2: 8B FF              mov         edi,edi
+  004015B4: 55                 push        ebp
+  004015B5: 8B EC              mov         ebp,esp
+  004015B7: 83 EC 28           sub         esp,28h
+  004015BA: 53                 push        ebx
+  004015BB: 56                 push        esi
+  004015BC: 57                 push        edi
+  004015BD: 8B 7D 10           mov         edi,dword ptr [ebp+10h]
+  004015C0: 33 C0              xor         eax,eax
+  004015C2: 8B D9              mov         ebx,ecx
+  004015C4: C7 45 D8 04 00 00  mov         dword ptr [ebp-28h],4
+            00
+  004015CB: 33 C9              xor         ecx,ecx
+  004015CD: 89 5D DC           mov         dword ptr [ebp-24h],ebx
+  004015D0: 8B F2              mov         esi,edx
+  004015D2: 89 4D E0           mov         dword ptr [ebp-20h],ecx
+  004015D5: 66 89 07           mov         word ptr [edi],ax
+  004015D8: 8D 45 F8           lea         eax,[ebp-8]
+  004015DB: 50                 push        eax
+  004015DC: 8D 45 D8           lea         eax,[ebp-28h]
+  004015DF: 89 4D E4           mov         dword ptr [ebp-1Ch],ecx
+  004015E2: 50                 push        eax
+  004015E3: 51                 push        ecx
+  004015E4: 56                 push        esi
+  004015E5: 89 4D E8           mov         dword ptr [ebp-18h],ecx
+  004015E8: 89 4D EC           mov         dword ptr [ebp-14h],ecx
+  004015EB: 89 4D F0           mov         dword ptr [ebp-10h],ecx
+  004015EE: 89 4D F4           mov         dword ptr [ebp-0Ch],ecx
+  004015F1: FF 15 28 60 40 00  call        dword ptr ds:[00406028h]
+  004015F7: 85 C0              test        eax,eax
+  004015F9: 75 3C              jne         00401637
+  004015FB: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  004015FE: 51                 push        ecx
+  004015FF: FF 75 08           push        dword ptr [ebp+8]
+  00401602: 8B CB              mov         ecx,ebx
+  00401604: E8 2A FF FF FF     call        00401533
+  00401609: 80 7D 18 00        cmp         byte ptr [ebp+18h],0
+  0040160D: 74 1B              je          0040162A
+  0040160F: 6A 04              push        4
+  00401611: 6A 00              push        0
+  00401613: 6A 00              push        0
+  00401615: 68 01 04 00 00     push        401h
+  0040161A: 57                 push        edi
+  0040161B: FF 35 C0 54 40 00  push        dword ptr ds:[004054C0h]
+  00401621: FF 75 08           push        dword ptr [ebp+8]
+  00401624: FF 15 3C 60 40 00  call        dword ptr ds:[0040603Ch]
+  0040162A: FF 75 F8           push        dword ptr [ebp-8]
+  0040162D: FF 15 34 60 40 00  call        dword ptr ds:[00406034h]
+  00401633: B0 01              mov         al,1
+  00401635: EB 57              jmp         0040168E
+  00401637: 8D 45 F8           lea         eax,[ebp-8]
+  0040163A: C7 45 D8 02 00 00  mov         dword ptr [ebp-28h],2
+            00
+  00401641: 50                 push        eax
+  00401642: 8D 45 D8           lea         eax,[ebp-28h]
+  00401645: 50                 push        eax
+  00401646: 6A 00              push        0
+  00401648: 56                 push        esi
+  00401649: FF 15 28 60 40 00  call        dword ptr ds:[00406028h]
+  0040164F: 85 C0              test        eax,eax
+  00401651: 75 39              jne         0040168C
+  00401653: 8B 55 F8           mov         edx,dword ptr [ebp-8]
+  00401656: 51                 push        ecx
+  00401657: FF 75 08           push        dword ptr [ebp+8]
+  0040165A: 8B CB              mov         ecx,ebx
+  0040165C: E8 D2 FE FF FF     call        00401533
+  00401661: 8B 45 F8           mov         eax,dword ptr [ebp-8]
+  00401664: 8B 40 14           mov         eax,dword ptr [eax+14h]
+  00401667: 85 C0              test        eax,eax
+  00401669: 75 02              jne         0040166D
+  0040166B: 8B C6              mov         eax,esi
+  0040166D: 51                 push        ecx
+  0040166E: 50                 push        eax
+  0040166F: 51                 push        ecx
+  00401670: 8B CF              mov         ecx,edi
+  00401672: E8 29 FE FF FF     call        004014A0
+  00401677: FF 75 F8           push        dword ptr [ebp-8]
+  0040167A: 8B D8              mov         ebx,eax
+  0040167C: C1 EB 1F           shr         ebx,1Fh
+  0040167F: 80 F3 01           xor         bl,1
+  00401682: FF 15 34 60 40 00  call        dword ptr ds:[00406034h]
+  00401688: 8A C3              mov         al,bl
+  0040168A: EB 02              jmp         0040168E
+  0040168C: 32 C0              xor         al,al
+  0040168E: 5F                 pop         edi
+  0040168F: 5E                 pop         esi
+  00401690: 5B                 pop         ebx
+  00401691: C9                 leave
+  00401692: C2 14 00           ret         14h
