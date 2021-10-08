@@ -120,3 +120,10 @@ for (int i = 0; i < result.size(); i++)
 ![](./img/aft-target-1.png)
 - *C:\Users\12149\Source\Repos\Panda\Debug\target\1\2*
 ![](img/aft-target-1-2.png)
+
+### 参考资料
+- [FindNextFileA function](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-findnextfilea)
+- [FindFirstFileA function](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-findfirstfilea)
+- [CopyFile function](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfile)
+- [GetModuleFileNameA function](https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamea)
+- [使用FindFirstFile和FindNextFile函数实现文件搜索遍历](https://www.write-bug.com/article/1864.html)
