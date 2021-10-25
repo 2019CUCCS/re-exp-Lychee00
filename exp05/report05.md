@@ -19,7 +19,8 @@
 ## 二、实验过程
 ### 1.准备工作
 - 实验开始前，当前计算器结果为1+1=2
-![](./img/2.gif)
+- ![](./img/2.gif)
+
 - 使用dumpbin查看导入表
 ```bash
 >dumpbin /imports: C:Windows\system32\calc.exe
@@ -65,7 +66,7 @@ bp User32!SetWindowTextW ".if(poi[rbp]==32h){eb [rbp] 33h;gc}.else{du [rbp];gc}"
 
 ### 4.验证结果
 - 再次计算1+1,此时结果变为3，说明篡改成功
-![](./img/3.gif)
+- ![](./img/3.gif)
 
 ### 5.恢复
 - 篡改成功后，再把计算器恢复到正常状态。
@@ -76,7 +77,7 @@ bl ;
 ```
 ![](./img/clear.png)
 - 清除断点后，计算器又恢复1+1=2了
-![](./img/clear.gif)
+- ![](./img/clear.gif)
 
 ## 三、参考资料
 - 老师提供的课程资料
