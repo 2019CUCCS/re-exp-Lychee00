@@ -78,10 +78,11 @@ call dword ptr ds:[&User32.MessageBoxW]
 
 ## 实验结果
 #### 上述修改后程序执行结果如下
+</b>![](./img/success.gif)
 - 首先点开程序时出现`Hello World`弹窗；
 - 取消弹窗后，程序与源程序完全一致：
   - 输入错误密码，弹窗提示密码错误并返回刚才的键入；
-  - 输入正确密码，弹窗提示输入密码正确。</b>![](./img/success.gif)
+  - 输入正确密码，弹窗提示输入密码正确。
 
 ## 参考资料
 - [手动修改二进制文件，实现在代码区中添加自己的一段代码](https://blog.csdn.net/ProgrammeringLearner/article/details/52096138)
